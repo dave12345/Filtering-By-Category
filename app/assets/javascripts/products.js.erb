@@ -1,0 +1,6 @@
+$(function(){
+  $('#category_select').on('change', function(){
+    var category_id = $(this).val();
+    window.location = "<%= ENV['RAILS_RELATIVE_URL_ROOT'] %>/" + category_id;
+  });
+});

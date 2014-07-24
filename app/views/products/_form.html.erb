@@ -1,0 +1,45 @@
+<%= form_for @product do |f| %>
+
+    
+    <div class="row">
+      <div class="small-2 columns">
+        <h5>Category: </h5>
+      </div>
+      <div class="small-4 columns left">
+        <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] }, prompt: "Select Category" %>
+      </div>
+    </div>
+  <div class="row">
+    <div class="small-2 columns">
+      <h5>Name: </h5>
+    </div>
+    <div class="small-4 columns left">
+      <%= f.text_field :name%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-2 columns">
+      <h5>Description: </h5>
+    </div>
+    <div class="small-4 columns left">
+      <%= f.text_field :description %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-2 columns">
+      <h5>Price: </h5>
+    </div>
+    <div class="small-2 columns left">
+      <%= f.text_field :pricing %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-1 columns">
+    <%= f.submit "Submit", class: "left tiny button radius" %>
+  </div>
+<% end %>
+  <div class="small-11 columns">
+    <%= link_to "Back", root_path, class: "left tiny button radius" %>
+  </div>
+</div> 
